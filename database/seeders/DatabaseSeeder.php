@@ -18,8 +18,17 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin Klinik',
+            'email' => 'admin@klinik.test',
+        ]);
+
+        $this->call([
+            DoctorSeeder::class,
+            PatientSeeder::class,
+            ServiceCounterSeeder::class,
+            ScheduleSeeder::class,
+            AppointmentSeeder::class,
+            QueueTicketSeeder::class,
         ]);
     }
 }
