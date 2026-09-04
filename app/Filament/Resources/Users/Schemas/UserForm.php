@@ -12,14 +12,17 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('User Name'))
                     ->required()
                     ->maxLength(255),
                 TextInput::make('email')
+                    ->label(__('Email'))
                     ->email()
                     ->required()
                     ->maxLength(255)
                     ->unique(ignoreRecord: true),
                 TextInput::make('password')
+                    ->label(__('Password'))
                     ->password()
                     ->revealable()
                     ->required(fn (string $operation): bool => $operation === 'create')

@@ -15,13 +15,13 @@ enum AppointmentStatus: string
     public function getLabel(): string
     {
         return match ($this) {
-            self::Pending => 'Menunggu Konfirmasi',
-            self::Confirmed => 'Terkonfirmasi',
-            self::CheckedIn => 'Sudah Check-In',
-            self::InProgress => 'Sedang Dilayani',
-            self::Completed => 'Selesai',
-            self::Cancelled => 'Dibatalkan',
-            self::NoShow => 'Tidak Hadir',
+            self::Pending => __('Pending Confirmation'),
+            self::Confirmed => __('Confirmed'),
+            self::CheckedIn => __('Checked In'),
+            self::InProgress => __('In Progress'),
+            self::Completed => __('Completed'),
+            self::Cancelled => __('Cancelled'),
+            self::NoShow => __('No Show'),
         };
     }
 

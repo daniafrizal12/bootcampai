@@ -11,9 +11,9 @@ enum ScheduleStatus: string
     public function getLabel(): string
     {
         return match ($this) {
-            self::Active => 'Aktif',
-            self::Inactive => 'Nonaktif',
-            self::Cancelled => 'Dibatalkan',
+            self::Active => __('Active'),
+            self::Inactive => __('Inactive'),
+            self::Cancelled => __('Cancelled'),
         };
     }
 

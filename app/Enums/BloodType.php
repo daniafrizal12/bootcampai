@@ -11,6 +11,11 @@ enum BloodType: string
 
     public function getLabel(): string
     {
-        return 'Golongan Darah ' . $this->value;
+        return match ($this) {
+            self::A => __('Blood Type A'),
+            self::B => __('Blood Type B'),
+            self::AB => __('Blood Type AB'),
+            self::O => __('Blood Type O'),
+        };
     }
 }

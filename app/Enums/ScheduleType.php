@@ -10,8 +10,8 @@ enum ScheduleType: string
     public function getLabel(): string
     {
         return match ($this) {
-            self::Recurring => 'Rutin (Mingguan)',
-            self::OneTime => 'Khusus (Satu Kali)',
+            self::Recurring => __('Recurring (Weekly)'),
+            self::OneTime => __('One-time (Specific Date)'),
         };
     }
 }

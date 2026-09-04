@@ -31,6 +31,24 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->resourceCreatePageRedirect('index')
+            ->resourceEditPageRedirect('index')
+            ->sidebarCollapsibleOnDesktop()
+            ->collapsibleNavigationGroups()
+            ->navigationGroups([
+                \Filament\Navigation\NavigationGroup::make()
+                    ->label(fn () => __('Medical Services'))
+                    ->icon('heroicon-o-heart')
+                    ->collapsible(),
+                \Filament\Navigation\NavigationGroup::make()
+                    ->label(fn () => __('Queue & Counters'))
+                    ->icon('heroicon-o-ticket')
+                    ->collapsible(),
+                \Filament\Navigation\NavigationGroup::make()
+                    ->label(fn () => __('Settings'))
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->collapsible(),
+            ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([

@@ -10,8 +10,8 @@ enum VisitType: string
     public function getLabel(): string
     {
         return match ($this) {
-            self::NewVisit => 'Kunjungan Baru',
-            self::FollowUp => 'Kontrol / Lanjutan',
+            self::NewVisit => __('New Visit'),
+            self::FollowUp => __('Follow-up Visit'),
         };
     }
 }
